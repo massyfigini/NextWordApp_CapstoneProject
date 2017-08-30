@@ -24,17 +24,17 @@ The data was previously downloaded at this link: https://d396qusza40orc.cloudfro
 
 ```r
 # twitter
-twitter <- readLines("C:/Users/figinim/Documents/Studies/Capstone Project/Coursera-SwiftKey/final/en_US/en_US.twitter.txt", encoding="UTF-8")
+twitter <- readLines("Coursera-SwiftKey/final/en_US/en_US.twitter.txt", encoding="UTF-8")
 twitter <- iconv(twitter, from = "latin1", to = "UTF-8", sub="")
 
 # news
-conn <- file("C:/Users/figinim/Documents/Studies/Capstone Project/Coursera-SwiftKey/final/en_US/en_US.news.txt", open="rb")
+conn <- file("Coursera-SwiftKey/final/en_US/en_US.news.txt", open="rb")
 news <- readLines(conn, encoding="UTF-8")
 close(conn)
 rm(conn)
 
 # blogs
-blogs <- readLines("C:/Users/figinim/Documents/Studies/Capstone Project/Coursera-SwiftKey/final/en_US/en_US.blogs.txt", encoding="UTF-8")
+blogs <- readLines("Coursera-SwiftKey/final/en_US/en_US.blogs.txt", encoding="UTF-8")
 blogs <- iconv(blogs, from = "latin1", to = "UTF-8", sub="")
 ```
 
