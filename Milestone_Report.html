@@ -140,17 +140,17 @@ $(document).ready(function () {
 <h1>1. Import the Data</h1>
 <p>The data was previously downloaded at this link: <a href="https://d396qusza40orc.cloudfront.net/dsscapstone/dataset/Coursera-SwiftKey.zip" class="uri">https://d396qusza40orc.cloudfront.net/dsscapstone/dataset/Coursera-SwiftKey.zip</a></p>
 <pre class="r"><code># twitter
-twitter &lt;- readLines(&quot;C:/Users/figinim/Documents/Studies/Capstone Project/Coursera-SwiftKey/final/en_US/en_US.twitter.txt&quot;, encoding=&quot;UTF-8&quot;)
+twitter &lt;- readLines(&quot;Coursera-SwiftKey/final/en_US/en_US.twitter.txt&quot;, encoding=&quot;UTF-8&quot;)
 twitter &lt;- iconv(twitter, from = &quot;latin1&quot;, to = &quot;UTF-8&quot;, sub=&quot;&quot;)
 
 # news
-conn &lt;- file(&quot;C:/Users/figinim/Documents/Studies/Capstone Project/Coursera-SwiftKey/final/en_US/en_US.news.txt&quot;, open=&quot;rb&quot;)
+conn &lt;- file(&quot;Coursera-SwiftKey/final/en_US/en_US.news.txt&quot;, open=&quot;rb&quot;)
 news &lt;- readLines(conn, encoding=&quot;UTF-8&quot;)
 close(conn)
 rm(conn)
 
 # blogs
-blogs &lt;- readLines(&quot;C:/Users/figinim/Documents/Studies/Capstone Project/Coursera-SwiftKey/final/en_US/en_US.blogs.txt&quot;, encoding=&quot;UTF-8&quot;)
+blogs &lt;- readLines(&quot;Coursera-SwiftKey/final/en_US/en_US.blogs.txt&quot;, encoding=&quot;UTF-8&quot;)
 blogs &lt;- iconv(blogs, from = &quot;latin1&quot;, to = &quot;UTF-8&quot;, sub=&quot;&quot;)</code></pre>
 </div>
 <div id="main-characteristics-of-the-datasets" class="section level1">
