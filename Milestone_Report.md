@@ -3,7 +3,7 @@ Massimiliano Figini
 2017-05-16  
 
 
-# Summary
+## Summary
 
 In this report there are the steps for cleaning and for the main exploratory data analysis of the datasets. The steps are:  
 1. Import the data  
@@ -17,7 +17,7 @@ In this report there are the steps for cleaning and for the main exploratory dat
 
 
 
-# 1. Import the Data  
+## 1. Import the Data  
 
 The data was previously downloaded at this link: https://d396qusza40orc.cloudfront.net/dsscapstone/dataset/Coursera-SwiftKey.zip 
 
@@ -40,7 +40,7 @@ blogs <- iconv(blogs, from = "latin1", to = "UTF-8", sub="")
 
 
 
-# 2. Main characteristics of the datasets  
+## 2. Main characteristics of the datasets  
 
 For each dataset we see number of lines and words.   
 
@@ -74,7 +74,7 @@ paste('We have ',length(blogs)," blog posts with a total of ",stri_stats_latex(b
 
 
 
-# 3. Merge and sample the datasets  
+## 3. Merge and sample the datasets  
 
 I merge the three datasets in a single one.  
 I tried to use all the data but it was not possible because of the limited memory of my notebook. For this reason I take 20 percent of all datasets. We will have over 10 million words anyway. 
@@ -93,7 +93,7 @@ paste('We have a total of ',length(DataSample)," sentences with ",stri_stats_lat
 
 
 
-# 4. Clean the dataset  
+## 4. Clean the dataset  
 
 First I delete some symbols: for examples, Twitter user use the # for the topics, then I must replace it.  
 Other symbols like punctuation (except comma) are used for terminate a sentence and start a new one: when there is these symbols I restart the string in a new line.  
@@ -141,7 +141,7 @@ DataClean <- unlist(strsplit(DataClean, "\\s"))
 
 
 
-# 5. Word frequencies  
+## 5. Word frequencies  
 
 We split the dataset for every word then we find the most frequent words and see these through an histogram.  
 
@@ -172,7 +172,7 @@ g + geom_bar(stat='identity', col="dark blue", fill="light blue")+labs(title="To
 
 
 
-# 6. Bigram frequencies  
+## 6. Bigram frequencies  
 
 We want the most frequent two consecutive words. For do this I have to take all the two consecutive words in each sentence, then we have to replace all the couples with a "|".
 
@@ -213,7 +213,7 @@ gg + geom_bar(stat='identity', col="black", fill="red")+labs(title="Top bigram w
 
 
 
-# 7. Trigram frequencies  
+## 7. Trigram frequencies  
 
 We want now the most frequent three consecutive words.
 
@@ -250,10 +250,10 @@ gg + geom_bar(stat='identity', col="black", fill="orange")+labs(title="Top trigr
 ![](Milestone_Report_files/figure-html/3frequencies-1.png)<!-- -->
 
 
-# 8. Next steps  
+## 8. Next steps  
 
 In this report we have a first look at the data.  
 The next steps will be:  
-1) Remove profanities: I will not to predict profanities with the algorithm, then I have to search a complete list of english profanities to censure them.
-2) Create the prediction algorithm: in particular the bigram and the threegram model will be used for the prediction algorithm.  
-3) Build the app: giving one or more words, the prediction app will be suggest a list of possibles "next word" using the prediction algorithm.
+1. Remove profanities: I will not to predict profanities with the algorithm, then I have to search a complete list of english profanities to censure them.
+2. Create the prediction algorithm: in particular the bigram and the threegram model will be used for the prediction algorithm.  
+3. Build the app: giving one or more words, the prediction app will be suggest a list of possibles "next word" using the prediction algorithm.
